@@ -59,7 +59,7 @@ const ProductSelector = () => {
           },
         }}
       >
-        <Image src={product.variants[0].darkImage} alt={product.name} width={isMobile ? 100 : 150} height={isMobile ? 100 : 150} style={{ borderRadius: 4 }} /> {/* Doble border radius */}
+        <Image src={product.variants[0].lightImage} alt={product.name} width={isMobile ? 100 : 150} height={isMobile ? 100 : 150} style={{ borderRadius: 4 }} /> {/* Doble border radius */}
         <Typography variant="body2" sx={{ color: selectedProduct.id === product.id ? 'white' : '#cccccc', mt: 1, fontSize: '0.9rem', fontWeight: 'bold' }}>{/* Color blanco si está seleccionado, gris 20% más claro si no */}
           {product.name}
         </Typography>
@@ -100,33 +100,33 @@ const ProductSelector = () => {
 
             {/* Variant Selector */}
             <Grid item xs={12} md={4} sx={{ backgroundColor: LIGHT_GRAY, px: 4, py: 4, borderRadius: 4 }}>
-              <Typography variant="h6" gutterBottom>
-                Select Variant
-              </Typography>
-              <Stack direction='column'  spacing={2}>
-                {selectedProduct.variants.map((variant) => (
-                  <Grid item xs={12} sm={6} key={variant.name}>
-                    <Box
-                      onClick={() => handleVariantSelect(variant)}
-                      sx={{
-                        cursor: 'pointer',
-                        border: selectedVariant.name === variant.name ? '2px solid white' : '1px solid #a1a1s',
-                        borderRadius: 1,
-                        p: 2,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                      }}
-                    >
-                      <Image src={variant.materialImage} alt={variant.name} width={isMobile ? 50 : 100} height={isMobile ? 50 : 100} />
-                      <Typography variant="body2" align="center" sx={{ mt: 1 }}>
-                        {variant.name}
-                      </Typography>
-                    </Box>
-                  </Grid>
-                ))}
-              </Stack>
-            </Grid>
+  <Typography  variant="h6" gutterBottom align="center" sx={{ fontWeight: 'bold' }}> {/* Título más grande */}
+    Select Variant
+  </Typography>
+  <Stack direction="column" spacing={2} sx={{ alignItems: 'center' }}> {/* Centrar elementos */}
+    {selectedProduct.variants.map((variant) => (
+      <Box
+        key={variant.name}
+        onClick={() => handleVariantSelect(variant)}
+        sx={{
+          cursor: 'pointer',
+          border: selectedVariant.name === variant.name ? '2px solid white' : '1px solid #a1a1a1',
+          borderRadius: 1,
+          p: 2,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          width: 'fit-content', // Ajustar ancho al contenido
+        }}
+      >
+        <Image src={variant.materialImage} alt={variant.name} width={isMobile ? 50 : 150} height={isMobile ? 50 : 150} />
+        <Typography variant="body2" align="center" sx={{ mt: 1, fontWeight: 'bold', color: '#666' }}> {/* Nombre más oscuro */}
+          {variant.name}
+        </Typography>
+      </Box>
+    ))}
+  </Stack>
+</Grid>
           </Stack>
         </Grid>
       </Container>
