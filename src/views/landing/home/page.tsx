@@ -7,14 +7,18 @@ import Models from './models';
 import Dimensions from './dimensions';
 import Cta from './cta';
 import Gallery from './gallery';
+import Animadiv from '@/app/animations/animadiv';
 
 function LandingPage() {
   return (
     <Box sx={{minHeight: '100%'}}>
   
         <Box sx={{minHeight: 800}}>
-          <Hero /> 
-          <Features /> 
+        
+            <Hero />
+            <Animadiv>
+            <Features />
+        </Animadiv>
           <Description /> 
           
           <Models /> 

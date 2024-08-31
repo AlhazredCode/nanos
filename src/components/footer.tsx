@@ -6,28 +6,32 @@ import { Box } from '@mui/material';
 
 const Footer: React.FC = () => {
   return (
-    <Box sx={{ mt: 'auto' }}> 
-      <Grid container alignItems="center" justifyContent="space-between" p={2}>
-        <Grid item xs={12} sm={4}>
-          <Typography variant="body2" color="textSecondary">
-            © {new Date().getFullYear()} Tu Empresa
-          </Typography>
-        </Grid>
-        <Grid item xs={12} sm={8} container justifyContent="flex-end" spacing={2}>
-          <Grid item>
-            <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <Typography variant="body2">Home</Typography>
-            </Link>
-          </Grid>
-          <Grid item>
-            <Link href="/customize" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <Typography variant="body2">Customize</Typography>
-            </Link>
-          </Grid>
-          <Grid item>
-            <Link href="/terms" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <Typography variant="body2">Terms & Conditions</Typography>
-            </Link>
+    <Box sx={{ mt: 'auto' }}>
+      <Grid container justifyContent="center">
+        <Grid item xs={12} md={10} lg={8}> {/* Ajusta el ancho máximo aquí */}
+          <Grid container alignItems="center" justifyContent="space-between" p={2}>
+            <Grid item xs={12} sm={4}>
+              <Typography variant="body2" color="textSecondary">
+                © {new Date().getFullYear()} Tu Empresa
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={8} container justifyContent="flex-end" spacing={2}>
+              <Grid item>
+                <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  <Typography variant="body2">Home</Typography>
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link href="/customize" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  <Typography variant="body2">Customize</Typography>
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link href="/terms" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  <Typography variant="body2">Terms & Conditions</Typography>
+                </Link>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
