@@ -14,22 +14,22 @@ const Gallery = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // Genera un índice aleatorio dentro del rango del array de imágenes
       const randomIndex = Math.floor(Math.random() * lightImages.length);
       setCurrentImageIndex(randomIndex);
-    }, 2800); 
+    }, 2800);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <Box sx={{ 
-      position: 'relative', 
-      width: '100%', 
-      height: isMobile ? 300 : 500, 
-      overflow: 'hidden', 
-      display: 'flex', 
-      justifyContent: 'center' 
+    <Box sx={{
+      position: 'relative',
+      width: '100%',
+      height: isMobile ? 300 : 500,
+      overflow: 'hidden',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center' // Centra verticalmente
     }}>
       <AnimatePresence initial={false}>
         <motion.div
@@ -38,16 +38,19 @@ const Gallery = () => {
           animate={{ x: 0 }}
           exit={{ x: isMobile ? 0 : '100%' }}
           transition={{ duration: 1, ease: 'easeInOut' }}
-          style={{ 
-            position: 'absolute', 
-            width: isMobile ? '100%' : '50%', // Ajusta el ancho según sea necesario
-            height: '100%'
+          style={{
+            position: 'absolute',
+            width: 'auto', // Ajusta el ancho automáticamente
+            height: isMobile ? 300 : 500, // Altura fija
+            maxWidth: '100%', // Limita el ancho máximo
           }}
         >
-          <Image src={lightImages[currentImageIndex]} alt={`Product ${currentImageIndex + 1}`} 
-                 width={isMobile ? 600 : 1000} // Ajusta el ancho de la imagen 
-                 height={isMobile ? 300 : 500} // Ajusta la altura de la imagen
-                 objectFit="cover" 
+          <Image
+            src={lightImages[currentImageIndex]}
+            alt={`Product ${currentImageIndex + 1}`}
+            width={isMobile ? 400 : 500}
+            height={isMobile ? 400 : 500} // Altura igual al ancho para imágenes cuadradas
+            objectFit="contain" // Ajusta la imagen al contenedor sin recortarla
           />
         </motion.div>
       </AnimatePresence>
