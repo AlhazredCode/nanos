@@ -1,20 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
-import { Typography, Box, Container } from '@mui/material';
+import { Typography, Box, Container, useMediaQuery, useTheme } from '@mui/material';
 
 const Dimensions = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 4, md: 8 } }}>
-      <Typography variant="h4" align="center" gutterBottom sx={{ fontWeight: 'bold', mb: 4 }}>
+      <Typography variant="h4" align="center" gutterBottom sx={{ fontWeight: 'bold', mb: 2 }}>
         Dimensions
       </Typography>
-      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+      <Typography variant="subtitle1" align="center" color="textSecondary" gutterBottom>
+        Perfectly sized for any restaurant
+      </Typography>
+      <Box
+        sx={{ display: 'flex', justifyContent: 'center' }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <Image
-          src="/assets/images/landing/dimensions.png" // Replace with your image path
+          src={isHovered ? '/assets/images/landing/dimensions1.png' : '/assets/images/landing/dimensions2.png'}
           alt="Dimensions"
-          width={900} // Adjust width as needed
-          height={900} // Adjust height as needed
-          style={{ maxWidth: '50%', height: 'auto' }} // Control size on desktop
+          width={isMobile ? 500 : 900}
+          height={isMobile ? 500 : 900}
+          style={{ maxWidth: '80%', height: 'auto', transition: '0.3s ease' }} // Transición suave
         />
       </Box>
     </Container>

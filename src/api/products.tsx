@@ -10,14 +10,14 @@ const Products: Product[] = [
     variants: [
       {
         name: 'Grain Wood',
-        lightImage: '/assets/images/products/model-1-variant-1-light.png',
+        lightImage: '/assets/images/products/model-1-variant-2-light.png',
         darkImage: '/assets/images/products/model-1-variant-1-dark.png',
         materialImage: '/assets/images/products/material2.png',
         detailImage: '/assets/images/products/model-1-variant-1-detail.png',
       },
       {
         name: 'Dark Wood',
-        lightImage: '/assets/images/products/model-1-variant-2-light.png',
+        lightImage: '/assets/images/products/model-1-variant-1-light.png',
         darkImage: '/assets/images/products/model-1-variant-2-dark.png',
         materialImage: '/assets/images/products/material1.png',
         detailImage: '/assets/images/products/model-1-variant-2-detail.png',

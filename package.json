@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3333",
+    "dev": "next dev -p 3331",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -20,6 +20,7 @@
     "@mui/x-date-pickers": "^6.18.5",
     "@mui/x-tree-view": "^6.17.0",
     "axios": "^1.6.7",
+    "framer-motion": "^11.3.31",
     "next": "14.2.6",
     "react": "^18",
     "react-dom": "^18",
