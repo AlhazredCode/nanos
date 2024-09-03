@@ -1,3 +1,4 @@
+
 'use client';
 import Image from 'next/image';
 
@@ -21,7 +22,7 @@ const imgfeature3 = '/assets/images/landing/feature3.svg';
 export default function Features() {
   return (
     <Container>
-      <motion.div
+        <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, ease: 'easeInOut' }}
@@ -33,7 +34,6 @@ export default function Features() {
           Elevate your restaurant experience with our innovative handlers
         </Typography>
       </motion.div>
-
       <motion.div 
         initial={{ opacity: 0, y: 50 }} 
         whileInView={{ opacity: 1, y: 0 }} 
@@ -45,15 +45,18 @@ export default function Features() {
             { image: imgfeature2, title: 'Timeless Design', subtitle: 'Elegant and durable, built to last' },
             { image: imgfeature3, title: 'Thoughtful Hospitality', subtitle: 'Improve the guest experience with ease' }
           ].map((feature, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
+            <Grid item xs={12} sm={12} md={4} key={index} sx={{mx: { md: 0 , sm : 6}}}> {/* Ajustado para mobile */}
               <Box sx={{ p: 3 }}>
-                <Stack spacing={1} direction="row">
+                <Stack spacing={1} direction="row" sx={{ alignItems: 'center' }}> {/* Alineación vertical */}
                   <Grid item xs={12}>
                     <Image src={feature.image} alt="feature" width={48} height={48} />
                   </Grid>
                   <Grid item xs={12}>
                     <Typography variant="h5" color="primary">
                       {feature.title}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary">
+                      {feature.subtitle}
                     </Typography>
                   </Grid>
                 </Stack>
