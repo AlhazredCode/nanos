@@ -1,5 +1,6 @@
 import React from 'react';
 import { Product } from '@/types/product';
+import Variants from './variants';
 
 const Products: Product[] = [
   {
@@ -7,60 +8,33 @@ const Products: Product[] = [
     name: 'Tripod Base',
     description: 'Tripod Clothing Rack - 3 Hangers - Heavy-Duty - Restaurant.',
     price: 39.99,
-    variants: [
-      {
-        name: 'Grain Wood',
-        lightImage: '/assets/images/products/model-1-variant-2-light.png',
-        darkImage: '/assets/images/products/model-1-variant-1-dark.png',
-        materialImage: '/assets/images/products/material2.png',
-        detailImage: '/assets/images/products/model-1-variant-1-detail.png',
-      },
-      {
-        name: 'Dark Wood',
-        lightImage: '/assets/images/products/model-1-variant-1-light.png',
-        darkImage: '/assets/images/products/model-1-variant-2-dark.png',
-        materialImage: '/assets/images/products/material1.png',
-        detailImage: '/assets/images/products/model-1-variant-2-detail.png',
-      },
-    ],
+    defaultImage: '/assets/images/products/Model1/Satin-ClassicOak.png',
+    variants: Variants.map((variant) => ({
+      ...variant,
+      image: `/assets/images/products/Model1/${variant.name}.png`, 
+    })),
   },
   {
     id: 2,
     name: 'Circular Base',
     description: 'Round Clothing Rack - 4 Hangers - Modern Design - Restaurant',
     price: 39.99,
-    variants: [
-      {
-        name: 'Grain Wood',
-        lightImage: '/assets/images/products/model-2-variant-1-light.png',
-        darkImage: '/assets/images/products/model-2-variant-1-dark.png',
-        materialImage: '/assets/images/products/material2.png',
-        detailImage: '/assets/images/products/model-2-variant-1-detail.png',
-      },
-      {
-        name: 'Dark Wood',
-        lightImage: '/assets/images/products/model-2-variant-2-light.png',
-        darkImage: '/assets/images/products/model-2-variant-2-dark.png',
-        materialImage: '/assets/images/products/material1.png',
-        detailImage: '/assets/images/products/model-2-variant-2-detail.png',
-      },
-    ],
+    defaultImage: '/assets/images/products/Model2/Satin-ClassicOak.png',
+    variants: Variants.map((variant) => ({
+      ...variant,
+      image: `/assets/images/products/Model2/${variant.name}.png`,
+    })),
   },
   {
     id: 3,
     name: 'Classic Base',
     description: 'Vintage Clothing Rack - 4 Hangers - Ornate - Restaurant - Classy.',
     price: 39.99,
-    variants: [
-      {
-        name: 'Classic Wood',
-        lightImage: '/assets/images/products/model-3-variant-1-light.png',
-        darkImage: '/assets/images/products/model-3-variant-1-dark.png',
-        materialImage: '/assets/images/products/material3.png',
-        detailImage: '/assets/images/products/model-3-variant-1-detail.png',
-      },
-      
-    ],
+    defaultImage: '/assets/images/products/Model3/Satin-ClassicOak.png',
+    variants: Variants.map((variant) => ({
+      ...variant,
+      image: `/assets/images/products/Model3/${variant.name}.png`,
+    })),
   },
 ];
 

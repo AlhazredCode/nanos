@@ -1,17 +1,14 @@
-interface Variant {
-  name: string;
-  lightImage: string;
-  darkImage: string;
-  materialImage: string;
-  detailImage: string;
-}
-
 interface Product {
   id: number;
   name: string;
   description: string;
   price: number;
-  variants: Variant[];
+  defaultImage: string; 
+  variants: {
+    name: string;
+    materialImage: string;
+    image: string; 
+  }[];
 }
 
-export type { Product, Variant };
+export type { Product }; 
