@@ -26,6 +26,7 @@
     "react-dom": "^18",
     "react-intersection-observer": "^9.13.0",
     "react-query": "^5.25.0",
+    "swiper": "^11.1.12",
     "swr": "^2.2.5"
   },
   "devDependencies": {

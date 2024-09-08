@@ -4,6 +4,7 @@ interface Product {
   description: string;
   price: number;
   defaultImage: string; 
+  tags: string[]; // Nuevo campo "tags"
   variants: {
     name: string;
     materialImage: string;
