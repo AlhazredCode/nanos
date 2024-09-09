@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
                   <Image src={PhoneIcon} alt="Phone" width={24} height={24} style={{ marginRight: '8px' }} />
                   <Typography variant="body2" sx={{ color: 'white' }}>
-                    +1 (555) 123-4567
+                    +1 (305) 804-6310 
                   </Typography>
                 </Box>
               </Grid>
@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
                   <Image src={LocationIcon} alt="Location" width={24} height={24} style={{ marginRight: '8px' }} />
                   <Typography variant="body2" sx={{ color: 'white' }}>
-                    123 Main Street, Cityville, USA
+                    Miami, Florida 33133 
                   </Typography>
                 </Box>
               </Grid>

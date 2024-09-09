@@ -26,7 +26,7 @@ const Description = () => {
                 They provide a convenient and discreet way for customers to store their belongings, 
                 keeping tables clutter-free and creating a more inviting atmosphere.
               </Typography>
-              <Button variant="contained" color="primary" size="large">
+              <Button variant="contained" color="primary" size="large"  onClick={() => window.open(`https://wa.me/13058046310`, '_blank')}>
                 Contact Sales
               </Button>
             </Box>

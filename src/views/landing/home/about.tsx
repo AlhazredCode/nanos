@@ -24,6 +24,27 @@ const imgfeature3 = '/assets/images/landing/icon3.svg';
 export default function About() {
   const theme = useTheme();
 
+  const handleSubmit = (event: React.FormEvent) => { 
+    event.preventDefault(); 
+  
+    const nameInput = document.getElementById('form-name') as HTMLInputElement;
+    const phoneInput = document.getElementById('form-phone') as HTMLInputElement;
+    const emailInput = document.getElementById('form-email') as HTMLInputElement;
+    const messageInput = document.getElementById('form-message') as HTMLInputElement;
+  
+    const formData = {
+      name: nameInput.value,
+      phone: phoneInput.value,
+      email: emailInput.value,
+      message: messageInput.value
+    };
+  
+    const message = `New contact:\n\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nMessage: ${formData.message}`;
+  
+    const phoneNumber = "13058046310"; 
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, "_blank");
+  };
   return (
     <Container>
       <Grid container spacing={4} sx={{ mt: { md: 5, xs: 2.5 }, mb: { md: 10, xs: 2.5 } }}>
@@ -61,31 +82,31 @@ export default function About() {
 
         {/* Segunda Grid: Formulario de contacto */}
         <Grid item xs={12} md={6} sx={{ mx: { xs: 2.5, md: 0 } }}> 
-  <Box
-    sx={{
-      p: 4,
-      backgroundColor: '#1a1a1a',
+        <Box
+  sx={{
+    p: 4,
+    backgroundColor: '#1a1a1a',
+    borderRadius: 4, 
+    textAlign: 'center', 
+    [theme.breakpoints.up('md')]: { 
+      textAlign: 'left',
       borderRadius: 4, 
-      textAlign: 'center', 
-      [theme.breakpoints.up('md')]: { 
-        textAlign: 'left',
-        borderRadius: 4, // Borde redondeado solo en desktop a la derecha
-      }
-    }}
-  >
-    <Typography variant="h5" gutterBottom sx={{ color: 'white', fontWeight: 'bold' }}>
-      Contact Us
-    </Typography>
-    <form>
-      <TextField label="Name" variant="outlined" fullWidth margin="normal" sx={{ input: { color: 'white' } }} />
-      <TextField label="Phone" variant="outlined" fullWidth margin="normal" sx={{ input: { color: 'white' } }} />
-      <TextField label="Email" variant="outlined" fullWidth margin="normal" sx={{ input: { color: 'white' } }} />
-      <TextField label="Message" variant="outlined" fullWidth margin="normal" multiline rows={4} sx={{ input: { color: 'white' } }} />
-      <Button variant="contained" color="primary" size="large" sx={{ mt: 2 }}>
-        Send
-      </Button>
-    </form>
-  </Box>
+    }
+  }}
+>
+  <Typography variant="h5" gutterBottom sx={{ color: 'white', fontWeight: 'bold' }}>
+    Contact Us
+  </Typography>
+  <form onSubmit={handleSubmit}>
+    <TextField id="form-name" label="Name" variant="outlined" fullWidth margin="normal" sx={{ input: { color: 'white' } }} />
+    <TextField id="form-phone" label="Phone" variant="outlined" fullWidth margin="normal" sx={{ input: { color: 'white' } }} />
+    <TextField id="form-email" label="Email" variant="outlined" fullWidth margin="normal" sx={{ input: { color: 'white' } }} />
+    <TextField id="form-message" label="Message" variant="outlined" fullWidth margin="normal" multiline rows={4} sx={{ input: { color: 'white' } }} />
+    <Button type="submit" variant="contained" color="primary" size="large" sx={{ mt: 2 }}>
+      Send
+    </Button>
+  </form>
+</Box>
 </Grid>
       </Grid>
     </Container>

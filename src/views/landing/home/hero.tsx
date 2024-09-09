@@ -81,9 +81,7 @@ export default function HeaderPage() {
         <Grid item>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button
-              component={Link}
-              href="/login"
-              target="_blank"
+             onClick={() => window.open(`https://wa.me/13058046310`, '_blank')}
               size="large"
               color="primary"
               variant="contained"

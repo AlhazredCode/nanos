@@ -24,9 +24,13 @@ const Header: React.FC<HeaderProps> = ({ showLandingPage, onToggleView }) => {
               </Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" color="primary">
-                Contact Sales
-              </Button>
+            <Button
+      variant="contained"
+      color="primary"
+      onClick={() => window.open(`https://wa.me/13058046310`, '_blank')}
+    >
+      Contact Sales
+    </Button>
             </Grid>
           </Grid>
         </Grid>
