@@ -47,8 +47,8 @@ export default function HeaderPage() {
       >
         <span>Keep Your Restaurant </span>
         <Box component="span" sx={{ color: 'primary.main' }}>
-          <span>Clean & Organized </span>
-        </Box>
+  <span>Clean &amp; Organized </span>
+</Box> 
       </Typography>
     </motion.div>
   </Grid>
@@ -67,7 +67,7 @@ export default function HeaderPage() {
           lineHeight: { xs: 1.4, md: 1.4 }
         }}
       >
-        The best solution for your restaurant's bag storage needs.
+        The best solution for your restaurant bag storage needs.
       </Typography>
     </motion.div>
   </Grid>

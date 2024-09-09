@@ -16,11 +16,11 @@ const Info = () => {
         </Box>
 
         <Typography variant="h4" align="center" gutterBottom sx={{ fontWeight: 'bold' }}>
-          N&S DISTRIBUTORS
+          N&S DISTRIBUTORS 
         </Typography>
 
         <Typography variant="body1" align="center" color="textSecondary" paragraph>
-          We are a full-service importer who considers your brand's growth as our responsibility. We represent your brand 
+          We are a full-service importer who considers your company growth as our responsibility. We represent your brand 
           through focused and personalized service, accompanying you through the whole product cycle.
         </Typography>
       </motion.div>

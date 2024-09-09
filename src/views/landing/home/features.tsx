@@ -1,4 +1,3 @@
-
 'use client';
 import Image from 'next/image';
 
@@ -27,9 +26,12 @@ export default function Features() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, ease: 'easeInOut' }}
       >
-        <Typography variant="h4" align="center" gutterBottom sx={{ fontWeight: 'bold', mb: 2 }}>
-        Don't let the Bags on the Floor
-        </Typography>
+      
+<Typography variant="h4" align="center" gutterBottom sx={{ fontWeight: 'bold', mb: 2 }}>
+  Don&apos;t let the Bags on the Floor
+</Typography>
+
+
         <Typography variant="subtitle1" align="center" color="textSecondary" gutterBottom>
           Elevate your restaurant experience with our innovative handlers
         </Typography>

@@ -75,7 +75,7 @@ const ProductSelector = () => {
     };
 
     // 3. Construir la URL de WhatsApp
-    const phoneNumber = "+584121024525";
+    const phoneNumber = "13058046310";
     const message = `New Order:\n\nProduct: ${orderData.product}\nQuantity: ${orderData.quantity}\nColor: ${orderData.color}\nName: ${orderData.name}\nAddress: ${orderData.address}\nPhone: ${orderData.phone}\nEmail: ${orderData.email}\nDetails: ${orderData.details}`;
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
